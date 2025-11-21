@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Create — Build Your Own Portfolio</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- PDF generator -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" defer></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" defer></script>
+
+  <!-- Portfolio Builder Logic -->
+  <script src="assets/js/portfolio-generator.js" defer></script>
+
+  <!-- Page Transitions -->
+  <script src="assets/js/animations.js" defer></script>
+
+  <style>
+    body { padding-top: 90px; background:#0f0f10; }
+    .builder-wrap{display:flex;gap:24px;max-width:1200px;margin:30px auto;padding:0 20px}
+    .builder-form{width:360px;background:#0f0f10;border:1px solid #222;padding:18px;border-radius:10px}
+    .field{margin-bottom:12px}
+    .field label{display:block;color:#bfbfbf;font-size:13px;margin-bottom:6px}
+    .field input,.field textarea,.field select{
+      width:100%;background:#0b0b0b;color:#fff;border:1px solid #262626;
+      padding:8px 10px;border-radius:6px;font-size:14px
+    }
+    .btn{background:white;color:black;padding:9px 12px;border-radius:8px;font-weight:700;border:none;cursor:pointer}
+    .btn-ghost{background:transparent;color:#bfbfbf;border:1px solid #2a2a2a;padding:7px 10px;border-radius:8px;cursor:pointer}
+    .preview-window{background:#0f0f10;border-radius:8px;padding:32px;border:1px solid #1f1f1f;min-height:700px}
+    @media(max-width:1000px){.builder-wrap{flex-direction:column}.builder-form{width:100%}}
+  </style>
+
+</head>
+
+<body>
+
+  <div class="page-transition-blur"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="assets/images/logo.png" class="logo-img" />
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="create.html">Create Your Own</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="builder-wrap">
+
+    <!-- FORM -->
+    <aside class="builder-form">
+      <h3 style="color:white;margin-bottom:10px;">Create your portfolio</h3>
+
+      <div class="field">
+        <label>Name</label>
+        <input id="nameInput" type="text" placeholder="Your Name" />
+      </div>
+
+      <div class="field">
+        <label>Title / Role</label>
+        <input id="roleInput" type="text" placeholder="Designer / Developer" />
+      </div>
+
+      <div class="field">
+        <label>About</label>
+        <textarea id="aboutInput" rows="4" placeholder="Short introduction"></textarea>
+      </div>
+
+      <div class="field">
+        <label>Skills</label>
+        <div id="skillsList"></div>
+        <div style="display:flex;gap:8px;margin-top:6px;">
+          <input id="skillNew" type="text" placeholder="Add skill..." />
+          <button class="btn-ghost" id="addSkillBtn">Add</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Projects</label>
+
+        <div id="projList"></div>
+
+        <div style="display:flex;gap:8px;margin-top:10px;">
+          <input id="projTitle" type="text" placeholder="Project title" />
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:6px;">
+          <input id="projDesc" type="text" placeholder="Short description" />
+          <button class="btn-ghost" id="addProjectBtn">Add</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Email</label>
+        <input id="emailInput" type="text" placeholder="you@example.com" />
+      </div>
+
+      <button class="btn" id="downloadPDF">Download as PDF</button>
+    </aside>
+
+    <!-- PREVIEW -->
+    <section class="preview-window" id="preview">
+      <div id="pdf-root" style="padding:24px;max-width:800px;margin:0 auto;">
+
+        <h1 id="pName" style="color:white;font-size:36px;margin-bottom:6px;">Your Name</h1>
+
+        <div id="pRole" style="color:#bfbfbf;margin-bottom:14px;">Your Role</div>
+
+        <p id="pAbout" style="max-width:640px;margin-bottom:24px;">
+          Your description will appear here.
+        </p>
+
+        <h2 style="color:white;margin-top:18px;">Skills</h2>
+        <ul id="pSkills" style="color:#bfbfbf;margin-bottom:16px;"></ul>
+
+        <h2 style="color:white;margin-top:18px;">Projects</h2>
+        <ul id="pProjects" style="color:#bfbfbf;"></ul>
+
+        <h2 style="color:white;margin-top:18px;">Contact</h2>
+        <p id="pEmail">your@email.com</p>
+
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
