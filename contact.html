@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Taksh Singh</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <style>
+        /* CRITICAL STYLES FOR NON-SCROLLING PAGE */
+        body {
+            background: var(--bg) !important;
+            height: 100vh;
+            overflow: hidden; /* Locks the page from scrolling */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        /* Form Container Styling */
+        .contact-form-container {
+            background-color: var(--bg);
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 10px 40px rgba(255, 183, 0, 0.1);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-title {
+            color: var(--white);
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .form-subtitle {
+            color: var(--muted);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        
+        /* Back Button Styling */
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            transition: color 0.2s;
+            z-index: 100;
+        }
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        /* Input Styling (Copied from your existing style.css for consistency) */
+        .form-group { margin-bottom: 20px; text-align: left; }
+        label { display: block; margin-bottom: 8px; color: var(--muted); font-weight: 500; }
+        
+        input[type="text"], input[type="email"], textarea {
+            width: 100%; padding: 12px 15px; border: 1px solid var(--card); 
+            background: var(--card); color: var(--white); border-radius: 8px; 
+            box-sizing: border-box; transition: 0.2s border-color; font-size: 16px; 
+            resize: vertical;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            border-color: var(--accent); outline: none;
+        }
+
+        .submit-btn {
+            width: 100%; background-color: var(--white); color: var(--bg); 
+            padding: 15px 20px; border: none; border-radius: 8px; cursor: pointer; 
+            font-size: 18px; font-weight: 700; margin-top: 15px; transition: 0.3s;
+        }
+
+        .submit-btn:hover { background-color: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">
+        &larr; Back to Portfolio
+    </a>
+
+    <div class="contact-form-container">
+        <div class="form-header">
+            <h3 class="form-title">Contact Me!</h3>
+            <p class="form-subtitle">The start of something magical...</p>
+        </div>
+
+        <form id="contact-form" method="POST" action="mailto:takshsingh313@gmail.com" enctype="text/plain">
+            
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="Name" placeholder="Your Full Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="Email" placeholder="schats@xyz.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Your Message For Me?</label>
+                <textarea id="message" name="Message" rows="5" placeholder="You can describe a lot, I can read it all." required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
