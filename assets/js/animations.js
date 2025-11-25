@@ -1,12 +1,8 @@
-/* animations.js — Final Code with Enhancements */
+
 document.addEventListener("DOMContentLoaded", () => {
 
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-  /* ===============================
-    LAYOUT ENHANCEMENT: Background Parallax
-  =============================== */
-  // Subtle background parallax effect
   gsap.to("body", {
     scrollTrigger: {
       trigger: "body",
@@ -19,28 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /* ===============================
-    HERO ENTRANCE (Timeline for controlled staging)
-  =============================== */
   const heroTL = gsap.timeline({ defaults: { duration: 1.2, ease: "power3.out" } });
 
-  // 1. Initial greeting appears
   heroTL.from(".greeting-text", { y: 20, opacity: 0, duration: 0.8 });
 
-  // 2. Main title lines appear staggered
+  
   heroTL.from(".hero-title .line", {
     y: 50,
     opacity: 0,
     stagger: 0.15,
   }, "<0.1");
 
-  // 3. CTA button slides in
   heroTL.from(".primary-cta-btn", { y: 20, opacity: 0 }, "<0.4");
 
 
-  /* ===============================
-    HERO TITLE PARALLAX / FADE ON SCROLL
-  =============================== */
   gsap.to(".hero-content", {
     scrollTrigger: {
       trigger: "#hero",
@@ -53,9 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "none"
   });
 
-  /* ===============================
-    HEADER VISUALS (Hide/Show & Accent Border)
-  =============================== */
   const header = document.querySelector(".site-header");
   let lastScroll = 0;
 
@@ -63,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     trigger: "body",
     start: "top -50",
     onUpdate: (self) => {
-      // Logic for hiding/showing the header
+   
       const current = self.scroll();
 
       if (current > lastScroll && current > 50) {
@@ -73,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       lastScroll = current;
 
-      // Logic for adding accent border
+    
       if (current > 50) {
         header.classList.add("scrolled-header");
       } else {
@@ -83,11 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /* ===============================
-    SECTION REVEALS (Fade, Slide, and Scale)
-  =============================== */
   document.querySelectorAll(".section-block").forEach(section => {
-    // Targets all main content (social icons excluded for visibility check)
+   
     const children = section.querySelectorAll(".section-title, .section-text, .section-link, .skill-item, .testimonial-card");
 
     gsap.from(children, {
@@ -104,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "power3.out"
     });
 
-    // Special animation for work cards
+  
     gsap.from(section.querySelectorAll(".work-card"), {
       scrollTrigger: {
         trigger: section.querySelector(".projects-grid"),
@@ -121,9 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /* ===============================
-    SMOOTH SCROLL ON NAV BUTTONS
-  =============================== */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
@@ -139,9 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /* ===============================
-    PROJECTS & SKILLS (Dynamic Injection)
-  =============================== */
+
   const projContainer = document.getElementById("projects-container");
   if (projContainer) {
     const projects = [
@@ -174,9 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* ===============================
-    WORK CARD PARALLAX HOVER EFFECT
-  =============================== */
+
   const workCards = document.querySelectorAll(".work-card");
 
   const handleCardParallax = (e) => {
@@ -219,9 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /* ===============================
-    BACK TO TOP BUTTON
-  =============================== */
   const backToTopBtn = document.querySelector(".back-to-top");
   if (backToTopBtn) {
 
@@ -237,5 +209,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
 
 });
