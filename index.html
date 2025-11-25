@@ -1,137 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Scrollfolio — Premium Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="icon" href="assets/images/profile.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap">
 
-  <!-- Satoshi Font -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/satoshi/latin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Tailwind (optional) -->
-  <link rel="stylesheet" href="assets/css/tailwind.css" />
-
-  <!-- Main Styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/fix-greeting.css" />
 
-  <!-- GSAP (CDN) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollToPlugin.min.js" defer></script>
 
-  <!-- Custom JS -->
   <script src="assets/js/animations.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
-
-
 </head>
+
 <body>
-
-  <!-- PAGE TRANSITION LAYER -->
-  <div class="page-transition-blur"></div>
-
-  <!-- NAVBAR -->
   <header class="site-header">
     <div class="header-inner">
+      <a href="#hero" class="header-logo-link">
+        <img src="assets/images/newlogo.png" alt="Logo" class="header-logo">
+      </a>
 
-      <!-- Logo (top-left with 20px spacing) -->
-      <div class="logo">
-        <img src="assets/images/logo.png" alt="Logo" class="logo-img" />
-      </div>
-
-      <!-- Nav -->
       <nav class="nav-links">
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#skills">Skills</a>
-        <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#experience">Experience</a>
-        <a class="nav-link" href="#contact">Contact</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Work</a>
+        <a href="#testimonials" class="nav-link">Social</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
-
     </div>
   </header>
 
- <a class="resume-btn" href="create.html">
-  <span class="rb"></span><span class="rt">CREATE YOUR OWN</span><span class="rb"></span>
-</a>
+  <a href="contact.html" class="chat-contact-btn">
+    <span>Say Hi!</span>
+  </a>
 
+  <section id="hero" class="hero-section">
+    <div class="container hero-content">
 
-  <!-- MAIN / HERO -->
-  <main>
-    <section id="hero" class="hero-section">
-      <div class="container hero-inner">
-        <div class="hero-left">
-          <h1 class="hero-title">Hi, I’m <span class="name">Your Name</span></h1>
-          <p class="hero-lead">Designer & Developer crafting premium digital experiences with clean UI, motion & interaction.</p>
-          <div class="hero-cta">
-            <a class="button" href="#projects">View Work</a>
-            <a class="ghost" href="#about"></a>
-          </div>
-        </div>
+      <div class="hero-text-container">
 
-        <div class="hero-right">
-          <div class="visual-card">
-            <img src="assets/images/hero-visual.jpg" alt="Visual" class="visual-img" />
-            <div class="visual-overlay"></div>
-          </div>
-        </div>
+        <p class="greeting-text">Hey, I'm Taksh Singh. How's your Day?</p>
+
+        <h1 class="hero-title-main">
+          <span class="line">Video Editor</span>
+          <span class="line accent-phrase ampersand-line">&</span>
+
+          <span class="line">
+            A Student At
+            <span class="hover-text-accent">Chandigarh University</span>
+          </span>
+        </h1>
       </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section-block">
-      <div class="container">
-        <h2 class="section-header hover-glow"><span class="bracket">[</span> ABOUT <span class="bracket">]</span></h2>
-        <p class="section-paragraph">I create clean, interactive websites with motion and elegance.</p>
-        <div class="section-line"></div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section-block alt">
-      <div class="container">
-        <h2 class="section-header hover-glow"><span class="bracket">[</span> SKILLS <span class="bracket">]</span></h2>
-        <div id="skills-container" class="skills-grid mt-10"></div>
-        <div class="section-line"></div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section-block">
-      <div class="container">
-        <h2 class="section-header hover-glow"><span class="bracket">[</span> PROJECTS <span class="bracket">]</span></h2>
-        <div id="projects-container" class="projects-grid mt-10"></div>
-        <div class="section-line"></div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section-block alt">
-      <div class="container">
-        <h2 class="section-header hover-glow"><span class="bracket">[</span> EXPERIENCE <span class="bracket">]</span></h2>
-        <p class="section-paragraph">Your experience details go here.</p>
-        <div class="section-line"></div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section-block">
-      <div class="container">
-        <h2 class="section-header hover-glow"><span class="bracket">[</span> CONTACT <span class="bracket">]</span></h2>
-        <p class="section-paragraph">Email: you@example.com</p>
-        <div class="section-line"></div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <small>© 2025 Your Name — Scrollfolio</small>
     </div>
+
+    <img src="assets/images/profile.png" alt="Taksh Singh Profile" class="hero-profile-img">
+  </section>
+
+  <section id="about" class="section-block about-block">
+    <div class="container">
+      <h2 class="section-title">ABOUT</h2>
+      <p class="section-text">
+        "I am a driven 1st-year B.Tech student at Chandigarh University,
+        Actively building a profile in web development and programming.
+        My unique differentiator is a robust creative background.
+        I utilize my skills in video editing and creative arts
+        to bring strong aesthetic value and user experience principles to every technical project.
+        I'm also a member in the Anand Bhawan Alumni Association."
+      </p>
+      <a href="assets/documents/your_resume.pdf" download class="resume-download-card">
+        <span class="resume-text">RESUME</span>
+        <i class="fas fa-download"></i>
+        <a href="assets/documents/membership_certificate.pdf" download class="certificate-download-card">
+          <span class="certificate-text">CERTIFICATE</span>
+          <i class="fas fa-certificate"></i>
+        </a>
+        <a href="#skills" class="section-link">See My Tool Stack →</a>
+    </div>
+  </section>
+
+  <section id="skills" class="section-block alt tool-stack-section">
+    <div class="container">
+      <h2 class="section-title">TOOL STACK</h2>
+      <div id="skills-container" class="skills-grid"></div>
+    </div>
+  </section>
+
+  <section id="projects" class="section-block work-block">
+    <div class="container">
+      <h2 class="section-title">WORK</h2>
+      <div id="projects-container" class="projects-grid"></div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section-block alt">
+    <div class="container">
+      <h2 class="section-title">SOCIAL VALIDATION</h2>
+      <div class="testimonials-grid">
+        <blockquote class="testimonial-card">
+          <p class="quote">"Taksh has an incredible eye for detail and storytelling. His editing work is top-notch!"</p>
+          <cite>— Sujal Negi</cite>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <p class="quote">"Professional, creative, and always delivers on time. Highly recommended!"</p>
+          <cite>— Bharat ji dubey</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="section-block contact-block">
+    <div class="container">
+      <h2 class="section-title">CONTACT</h2>
+      <p class="section-text large-email-text">
+        <a href="mailto:takshsingh313@gmail.com">SAY HI!</a>
+      </p>
+      <p class="section-text-sub">I'm currently accepting new projects. Let's build something slick!</p>
+
+      <div class="social-links">
+        <a href="mailto:takshsingh313@gmail.com" target="_blank" class="social-icon-link">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/Takshsingh313" target="_blank" class="social-icon-link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://instagram.com/_takshsingh_" target="_blank" class="social-icon-link">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com/in/taksh-singh-58a168367" target="_blank" class="social-icon-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <small>© 2025 TAKSH SINGH . Thanks for Visiting ,Explore Around. Until Next Time.</small>
   </footer>
+  <button class="back-to-top" aria-label="Back to top">↑</button>
 
 </body>
+
 </html>
-
-
