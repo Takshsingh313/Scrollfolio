@@ -8,7 +8,7 @@
   **I made this project to actively showcase my dual expertise in both technical implementation (coding) and professional creative aesthetics (design)**
 
  [![GitHub](https://img.shields.io/badge/GitHub-Scrollfolio-red?logo=github)](https://github.com/Takshsingh313/Scrollfolio)
- [![Axiom](https://img.shields.io/badge/Built%20for-Axiom%20YSWS-blue)](https://axiom.hackclub.com/)
+ [![Axiom](https://img.shields.io/badge/Built%20for-Moonshot%20-blue)](https://moonshot.hackclub.com/)
  </div>
 
 <div align="center">
@@ -19,17 +19,28 @@
   </a>
 </div>
 
-# demo
-
+---
+# About
+- I designed Scrollfolio to be a premium experience. Every element, from the layout to the scroll effects, was engineered to hook the user and clearly communicate my high standards for both technical execution and creative polish.
+- Check it out [Here](https://takshsingh313.github.io/Scrollfolio/)
+---
+# Demo
  - Demo video of my working Portfolio : [Link](https://drive.google.com/file/d/1gk2i4yjjAF1wcjSTnMqegJCTzZOALBiR/view?usp=sharing)
    
 
-
+---
+## Technologies Used
+- Javascript(GSAP)
+- HTML
+- CSS
+ ---
 ## Features
+- Clear Work Showcase : The project site is tight and efficient, showing three projects side-by-side. This keeps the portfolio organized and ensures you can see my range of work immediately.
+- Advanced style & layout : The site’s entire look is built with clean CSS Grid and Flexbox, making sure the high-contrast design is perfectly organized and visually striking.
+- Clean Workflow: The porfolio layout including contact system is streamlined: hitting the "Say Hi!" button takes you to a dedicated, fixed-screen contact page, keeping the experience fast and distraction-free.
 
 
-
-
+---
 ## Project Structure
 
 ```
