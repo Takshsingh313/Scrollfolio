@@ -506,6 +506,51 @@ body {
   margin: 0 auto;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.social-icon-link {
+  color: var(--white) !important;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  padding: 0;
+  border: 1px solid var(--white);
+  background: transparent;
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  text-decoration: none;
+  margin: 0;
+}
+
+.social-icon-link i {
+  color: var(--white) !important;
+  font-size: 24px !important;
+  display: inline-block !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  vertical-align: middle;
+}
+
+.social-icon-link:hover {
+  color: var(--accent) !important;
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 183, 0, 0.2);
+}
+
+.social-icon-link:hover i {
+  color: var(--accent) !important;
+}
 
 .site-footer {
   padding: 15px 0 10px;
@@ -655,3 +700,53 @@ body {
   flex-wrap: wrap;
 }
 
+.resume-download-card,
+.certificate-download-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  width: 250px;
+  background: var(--card);
+  padding: 20px 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.resume-download-card:hover,
+.certificate-download-card:hover {
+  transform: translateY(-5px);
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 8px 20px rgba(255, 183, 0, 0.2);
+}
+
+.resume-download-card span,
+.certificate-download-card span {
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+
+.resume-download-card:hover span,
+.certificate-download-card:hover span {
+  color: var(--accent);
+}
+
+.resume-download-card i,
+.certificate-download-card i {
+  color: var(--muted);
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.resume-download-card:hover i,
+.certificate-download-card:hover i {
+  color: var(--accent);
+}
